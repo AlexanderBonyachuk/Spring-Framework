@@ -11,8 +11,8 @@ public class MusicPlayer {
     public MusicPlayer() {}
 
     // Inversion Control method (IoC)
-    public MusicPlayer(List<Music> musicList) {
-        this.musicList = musicList;
+    public MusicPlayer(Music music) {
+        musicList.add(music);
     }
 
     public void setMusicList(List<Music> musicList) {
