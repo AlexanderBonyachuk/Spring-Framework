@@ -22,7 +22,8 @@
     </bean>
 
     <bean id="musicPlayer"
-          class="ru.bonyachuk.springcourse.MusicPlayer">
+          class="ru.bonyachuk.springcourse.MusicPlayer"
+          scope="prototype">
 
         <property name="musicList">
             <list>
