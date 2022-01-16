@@ -2,25 +2,19 @@ package ru.bonyachuk.springcourse;
 
 import org.springframework.stereotype.Component;
 
-@Component("musicBeanClassic")
+import java.util.concurrent.ThreadLocalRandom;
+
+@Component
 public class ClassicalMusic implements Music {
-    private ClassicalMusic() {}
-
-    // Factory method
-    public static ClassicalMusic getClassicalMusic() {
-        return new ClassicalMusic();
-    }
-
-    public void doMyInit() {
-        System.out.println("Doing initialization Classical Music");
-    }
-
-    public void doMyDestroy() {
-        System.out.println("Doing destruction Classical Music");
-    }
+    private String[] musicMass = {
+            "Classic Music 1",
+            "Classic Music 2",
+            "Classic Music 3"
+    };
 
     @Override
     public String getsong() {
-        return "Hungarian Rhapsody";
+        ThreadLocalRandom random = ThreadLocalRandom.current();
+        return musicMass[random.nextInt(musicMass.length)];
     }
 }

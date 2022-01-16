@@ -8,12 +8,8 @@ public class NewSpring {
                 "applicationContext.xml"
         );
 
-        Music music = context.getBean("rockMusic", Music.class);
-        Music music2 = context.getBean("musicBeanClassic", Music.class);
-        MusicPlayer musicPlayerRock = new MusicPlayer(music);
-        MusicPlayer musicPlayerClassical = new MusicPlayer(music2);
-        musicPlayerRock.playMusic();
-        musicPlayerClassical.playMusic();
+        Computer computer = context.getBean("computer", Computer.class);
+        System.out.println(computer);
 
         context.close();
     }
