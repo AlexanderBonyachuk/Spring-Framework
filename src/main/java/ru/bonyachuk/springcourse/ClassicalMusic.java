@@ -6,7 +6,6 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import java.util.concurrent.ThreadLocalRandom;
 
-@Component
 public class ClassicalMusic implements Music {
     private String[] musicMass = {
             "Classic Music 1",
