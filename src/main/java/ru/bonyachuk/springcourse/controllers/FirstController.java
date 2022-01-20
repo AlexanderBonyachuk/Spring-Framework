@@ -28,14 +28,12 @@ public class FirstController {
 
     @GetMapping("/calculator")
     public String calculator(
-            @RequestParam(value = "a", required = false) Integer number1,
-            @RequestParam(value = "b", required = false) Integer number2,
-            @RequestParam(value = "action", required = false) String operation,
+            @RequestParam("a") int number1,
+            @RequestParam("b") int number2,
+            @RequestParam("action") String operation,
             Model model) {
 
-        int result = 0;
-        if ((number1 != null) && (number2 != null)) {
-            result = number1 * number2;
+        double result;
 
             switch (operation) {
                 case "multiplication":
@@ -48,14 +46,14 @@ public class FirstController {
                     result = number1 - number2;
                     break;
                 case "division":
-                    result = number1 / number2;
+                    result = number1 / (double) number2;
                     break;
                 default:
+                    result = 0;
                     break;
             }
-        }
 
-        model.addAttribute("message_calc", result);
+        model.addAttribute("result", result);
 
         return "first/calculator";
     }
