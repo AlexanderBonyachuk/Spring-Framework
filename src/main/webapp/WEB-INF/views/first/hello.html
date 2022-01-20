@@ -5,8 +5,14 @@
     <title>Hello</title>
 </head>
 <body>
+
     Hello, bro!
     <a href="/first/goodbye">Say goodbye</a> or <a href="/exit">Exit</a>
-    or <a href="/first/hello?name=Alex&surname=Bon">Request with parameters</a>
+    or
+    <a href="/first/hello?name=Alex&surname=Bon">Request with parameters</a>
+    <p th:text="${message}">replacement text</p>
+    <p></p>
+    <a href="/first/calculator">CALCULATOR</a>
+
 </body>
 </html>
